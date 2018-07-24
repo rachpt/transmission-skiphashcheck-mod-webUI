@@ -125,7 +125,7 @@ send_simple_response (struct evhttp_request * req,
 
   evbuffer_add_printf (body, "<h1>%d: %s</h1>", code, code_text);
   if (text)
-    evbuffer_add_printf (body, "%s", text);
+    evbuffer_add_printf (body, "%s<br /><br /><a href=\"/index.html\">Click to Homepage</a>", text);
   evhttp_send_reply (req, code, code_text, body);
 
   evbuffer_free (body);
